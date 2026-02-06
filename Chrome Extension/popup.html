@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Match Score</title>
+  <style>
+    body {
+      width: 420px; min-height: 520px;
+      padding: 16px; margin: 0;
+      font-family: system-ui, sans-serif;
+      background: #f8f9fa; color: #111;
+    }
+    h2 { margin: 0 0 14px; font-size: 1.3rem; }
+    label { display: block; margin: 12px 0 4px; font-weight: 600; }
+    textarea {
+      width: 100%; height: 110px;
+      padding: 8px; font-size: 14px;
+      border: 1px solid #ccc; border-radius: 6px;
+      resize: vertical; box-sizing: border-box;
+    }
+    .file-area {
+      margin: 12px 0;
+      padding: 10px;
+      border: 2px dashed #aaa;
+      border-radius: 6px;
+      text-align: center;
+      cursor: pointer;
+      background: #fff;
+    }
+    .file-area:hover { border-color: #0066cc; }
+    input[type="file"] { display: none; }
+    #file-name { margin-top: 8px; font-size: 0.9rem; color: #555; }
+    button {
+      margin: 16px 0 8px;
+      padding: 10px 20px;
+      background: #0066cc; color: white;
+      border: none; border-radius: 6px;
+      cursor: pointer; font-size: 1rem;
+    }
+    button:hover { background: #0055b3; }
+    button:disabled { background: #aaa; cursor: not-allowed; }
+    #result {
+      margin-top: 12px; padding: 12px;
+      background: white; border: 1px solid #ddd;
+      border-radius: 6px; min-height: 120px;
+      white-space: pre-wrap; line-height: 1.45;
+    }
+    #score { font-size: 1.8rem; font-weight: bold; color: #0066cc; }
+    .error { color: #d32f2f; }
+  </style>
+</head>
+<body>
+  <h2>Resume Match Score (Local AI)</h2>
+
+  <label>Upload Resume (.txt or .pdf)</label>
+  <div class="file-area" id="drop-area">
+    <span>Click or drag resume file here</span><br>
+    <small>Supported: .txt, .pdf (text-based)</small>
+    <input type="file" id="resume-file" accept=".txt,.pdf">
+  </div>
+  <div id="file-name"></div>
+
+  <label>Job Description</label>
+  <textarea id="job" placeholder="Paste the full job posting here..."></textarea>
+
+  <button id="analyze">Calculate Match Score</button>
+
+  <div id="result">Result will appear here</div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

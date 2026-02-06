@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Resume Match Score (Ollama)",
+  "version": "1.0",
+  "description": "Local AI resume vs job description match score using Ollama",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost:11434/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Resume Match"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
